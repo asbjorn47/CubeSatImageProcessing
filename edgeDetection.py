@@ -1,9 +1,10 @@
+from colourDetection import *
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
 
-img = cv2.imread('fire2.jpg',1)
+img = crop_img
 img_rgb = cv2.cvtColor(img,cv2.COLOR_BGR2RGB) #Convert image to RGB colour space
 img_hsv = cv2.cvtColor(img_rgb,cv2.COLOR_RGB2HSV) #Convert image to HSV color space
 
