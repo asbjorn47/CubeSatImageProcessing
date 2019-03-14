@@ -1,0 +1,3 @@
+${PERSON_NAME},
+The fire is progressing ${FIRE_DIRECTION}.
+The fire is located at ${FIRE_LOCATION}.
