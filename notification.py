@@ -23,7 +23,7 @@ def read_template(filename):
         template_file_content = template_file.read()
     return Template(template_file_content)
 
-def mail(direction, img):
+def mail(direction):
     names, emails = get_contacts('contacts.txt')
     message_template = read_template('message.txt')
 
@@ -35,15 +35,10 @@ def mail(direction, img):
         msg = MIMEMultipart()
         location = "43.6532° N, 79.3832° W"
         message = message_template.substitute(PERSON_NAME=name.title(),FIRE_DIRECTION=direction,FIRE_LOCATION=location)
-        #fp = open('images/fire3.jpg', 'rb')
-        #msgImage = MIMEImage(fp.read())
-        #fp.close()
-        #msgImage.add_header('Content-ID', '<image1>')
         msg['From']=MY_ADDRESS
         msg['To']=email
         msg['Subject']="URGENT: Forest Fire Detected!"
         msg.attach(MIMEText(message, 'plain'))
-        #msg.attach(msgImage)
         s.send_message(msg)
         del msg
 

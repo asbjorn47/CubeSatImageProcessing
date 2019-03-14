@@ -19,7 +19,7 @@ def main():
     import sys
     global image_hsv, pixel
 
-    image_src = cv2.imread('images/fire4.jpg',1)
+    image_src = cv2.imread('images/fire10.jpg',1)
     if image_src is None:
         print ("the image read is None............")
         return
