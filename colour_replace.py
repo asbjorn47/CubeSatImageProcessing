@@ -24,13 +24,6 @@ def main(image):
     meany = np.mean(notBlack[0]) #Compute the average y-value of the smoke
 
     #Check which direction the smoke is traveling
-    third01 = int(shape[0]/4)
-    third02 = int(2*shape[0]/3)
-    third11 = int(shape[1]/3)
-    third12 = int(2*shape[1]/3)
-
-    print(meanx, meany)
-
     if meanx > shape[1]/2:
         d1 = "East"
     else:
@@ -40,11 +33,10 @@ def main(image):
     else:
         d2 = "North"
     try:
-        d
+        d1,d2
     except NameError:
-        direction = d2+"-"+d1
+        direction = "*Unable to Detect Direction*"
     else:
-        direction = d
+        direction = d2+"-"+d1
     if direction != "-":
-        print(direction)
         mail(direction)
